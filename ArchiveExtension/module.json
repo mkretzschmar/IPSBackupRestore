@@ -1,0 +1,14 @@
+{
+    "id": "{7EF9F4F5-62DE-4A87-92EB-B3264B75D408}",
+    "name": "ArchiveExtension",
+    "type": 3,
+    "vendor": "SAMSOL",
+    "aliases":
+    [
+        "Archive Extension"
+    ],  
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "AXT"
+}
