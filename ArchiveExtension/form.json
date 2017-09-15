@@ -10,8 +10,8 @@
     "name": "HKVList",
     "caption": "HKV",
     "rowCount": 20,
-    "add": true,
-    "delete": true,
+    "add": false,
+    "delete": false,
     "sort": {
         "column": "hkvid",
         "direction": "ascending"
@@ -19,7 +19,7 @@
     "columns": [{
         "label": "HKVID",
         "name": "hkvid", 
-        "width": "50px",
+        "width": "75px",
         "add": 0,
         "edit": {
             "type": "SelectInstance"
@@ -27,12 +27,12 @@
     }, {
         "label": "Anzahl",
         "name": "anzahl",
-        "width": "auto",
+        "width": "50px",
         "add": ""
     }, {
         "label": "State",
         "name": "State",
-        "width": "40px",
+        "width": "200px",
         "add": ""
     }],
     "values": [{
