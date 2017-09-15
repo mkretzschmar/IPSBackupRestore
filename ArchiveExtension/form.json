@@ -1,57 +1,52 @@
 {
     "elements":
     [
+
+    ],
+    "actions":
+    [
         {
     "type": "List",
-    "name": "Devices",
-    "caption": "Devices",
-    "rowCount": 5,
+    "name": "HKVList",
+    "caption": "HKV",
+    "rowCount": 20,
     "add": true,
     "delete": true,
     "sort": {
-        "column": "name",
+        "column": "hkvid",
         "direction": "ascending"
     },
     "columns": [{
-        "label": "InstanceID",
-        "name": "InstanceID", 
-        "width": "75px",
+        "label": "HKVID",
+        "name": "hkvid", 
+        "width": "50px",
         "add": 0,
         "edit": {
             "type": "SelectInstance"
         }
     }, {
-        "label": "Name",
-        "name": "Name",
+        "label": "Anzahl",
+        "name": "anzahl",
         "width": "auto",
         "add": ""
     }, {
         "label": "State",
         "name": "State",
         "width": "40px",
-        "add": "New!"
-    }, {
-        "label": "Temperature",
-        "name": "Temperature",
-        "width": "75px",
-        "add": 20.0,
-        "edit": {
-            "type": "NumberSpinner",
-            "digits": 2
-        }
+        "add": ""
     }],
     "values": [{
-        "InstanceID": 12435,
-        "Name": "ABCD",
-        "State": "OK!",
+        "hkvid": 12345678,
+        "anzahl": 3,
+        "State": "ERROR",
         "Temperature": 23.31,
         "rowColor": "#ff0000" //rot
     }]
+},{
+            "type": "Button",
+            "label": "Show selected item!",
+            "onClick": "var_dump($HKVList);"
 }
-    ],
-    "actions":
-    [
-
     ],
     "status":
     [
