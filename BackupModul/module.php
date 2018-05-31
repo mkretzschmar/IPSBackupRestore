@@ -1,6 +1,6 @@
 <?
 
-class ArchiveExtension extends IPSModule {
+class BackupExtension extends IPSModule {
 
     /**
      * 
