@@ -3,10 +3,9 @@
     "name": "BackupExtension",
     "type": 3,
     "vendor": "SAMSOL",
-    "aliases":
-    [
+    "aliases": [
         "Backup Extension"
-    ],  
+    ],
     "parentRequirements": [],
     "childRequirements": [],
     "implemented": [],

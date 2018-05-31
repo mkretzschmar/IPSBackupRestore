@@ -1,28 +1,46 @@
 <?
 
 class ArchiveExtension extends IPSModule {
- 
+
+    /**
+     * 
+     */
     public function __construct($InstanceID) {
         parent::__construct($InstanceID);
     }
- 
-    // Überschreibt die interne IPS_Create($id) Funktion
+
+    /**
+     * 
+     */
     public function Create() {
         parent::Create();
     }
- 
-    // Überschreibt die interne IPS_ApplyChanges($id) Funktion
+
+    /**
+     * 
+     */
     public function ApplyChanges() {
         parent::ApplyChanges();
     }
- 
+
+    /* -------------------------------------------------------------------------------- */
+
     /**
      *
-     * AXT_RemoveZeroValues($id);
+     * BAC_MountUSBStick($id);
      *
      */
-    public function RemoveZeroValues() {
-        // Selbsterstellter Code
+    public function MountUSBStick() {
+         echo "MountUSBStick: ".$this->InstanceID;
+    }
+
+    /**
+     *
+     * BAC_MountUSBStick($id);
+     *
+     */
+    public function DoBackup() {
+         echo "DOBACKUP: ".$this->InstanceID;
     }
 }
 ?>

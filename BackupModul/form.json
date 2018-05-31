@@ -1,55 +1,48 @@
 {
-    "elements":
-    [
-
-    ],
-    "actions":
-    [
+    "elements": [
         {
-    "type": "List",
-    "name": "HKVList",
-    "caption": "HKV",
-    "rowCount": 20,
-    "add": false,
-    "delete": false,
-    "sort": {
-        "column": "hkvid",
-        "direction": "ascending"
-    },
-    "columns": [{
-        "label": "HKVID",
-        "name": "hkvid", 
-        "width": "75px",
-        "add": 0,
-        "edit": {
-            "type": "SelectInstance"
+            "type": "ValidationTextBox",
+            "name": "Username",
+            "caption": "Username"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "Password",
+            "caption": "Password"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "Sender",
+            "caption": "Sender"
         }
-    }, {
-        "label": "Anzahl",
-        "name": "anzahl",
-        "width": "50px",
-        "add": ""
-    }, {
-        "label": "State",
-        "name": "State",
-        "width": "200px",
-        "add": ""
-    }],
-    "values": [{
-        "hkvid": 12345678,
-        "anzahl": 3,
-        "State": "ERROR",
-        "Temperature": 23.31,
-        "rowColor": "#ff0000" //rot
-    }]
-},{
-            "type": "Button",
-            "label": "Show selected item!",
-            "onClick": "var_dump($HKVList);"
-}
     ],
-    "status":
-    [
-
+    "actions": [
+        {
+            "type": "ValidationTextBox",
+            "name": "Number",
+            "caption": "Number"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "Message",
+            "caption": "Message"
+        },
+        {
+            "type": "Button",
+            "label": "Send Message",
+            "onClick": "SMS_Send($id);"
+        },
+        {
+            "type": "Button",
+            "label": "Mount Stick",
+            "onClick": "echo 'Info: '.sprintf('%.2f', BAC_MountUSBStick($id)).'.';"
+        }
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active", "caption": "Login information valid" },
+        { "code": 201, "icon": "error", "caption": "Authentication failed" },
+        { "code": 202, "icon": "error", "caption": "No credits left" }
     ]
 }
