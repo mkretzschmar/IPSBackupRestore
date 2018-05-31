@@ -93,12 +93,12 @@ class BackupExtension extends IPSModule {
      */
     public function DoReport() {
         $destDir = $this->ReadPropertyString("DestinationDir");
-        $SMTPsourceID = $this->ReadPropertyInteger("SMTPsourceID");
+        $SMTPSourceID = $this->ReadPropertyInteger("SMTPSourceID");
         $ReportReceiver = $this->ReadPropertyString("ReportReceiver");
 
         $content = "Backup finished.\n\nFile: ".exec('ls -l '.$destDir);
 		$content .= "\n\n".exec('df -h '.$destDir);
-		return SMTP_SendMailEx($SMTPsourceID, $ReportReceiver, "[BACKUP IPS] Backup-Report", $content);
+		return SMTP_SendMailEx($SMTPSourceID, $ReportReceiver, "[BACKUP IPS] Backup-Report", $content);
     }
 }
 ?>
