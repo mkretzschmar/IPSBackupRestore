@@ -1,5 +1,8 @@
 <?
 
+/**
+ * 
+ */
 class BackupExtension extends IPSModule {
 
     /**
@@ -17,6 +20,8 @@ class BackupExtension extends IPSModule {
         $this->RegisterPropertyString("SourceDir", "/var/lib/symcon/");
         $this->RegisterPropertyString("DestinationDir", "/media/usbstick/");
         $this->RegisterPropertyString("Prefix", "ipsbackup_");
+        $this->RegisterPropertyString("ReportReceiver", "marekre@fh-zwickau.de");
+        
         
     }
 
@@ -44,18 +49,27 @@ class BackupExtension extends IPSModule {
      *
      */
     public function MountUSBStick() {
-        echo "MountUSBStick: ".$this->InstanceID;
+        echo "MountUSBStick: Leider noch nicht implementiert/n";
+        //sudo apt-get -y install ntfs-3g hfsutils hfsprogs exfat-fuse
+        //sudo mkdir /media/usbstick
+        //FAT32: sudo mount -t vfat -o utf8,uid=pi,gid=pi,noatime /dev/sda1 /media/usbstick
+        //NTFS: sudo mount -t ntfs-3g -o utf8,uid=pi,gid=pi,noatime /dev/sda1 /media/usbstick
+
     }
 
     /**
      *
-     * BAC_MountUSBStick($id);
+     * BAC_DoBackup($id);
      *
      */
     public function DoBackup() {
-        echo "DOBACKUP: ".$this->InstanceID;
+        $srcDir = $this->ReadPropertyString("SourceDir");
+        $destDir = $this->ReadPropertyString("DestinationDir");
+        $prefix = $this->ReadPropertyString("Prefix");
+        
+        echo "DoBackup: ".$srcDir." -> ".$destDir;
         $date = date("Ymd-Gi");
-        $cmd = 'cd /var/lib/symcon/ && zip -r /media/usbstick/ipsbackup_'.$date.'.zip *';
+        $cmd = 'cd '.$srcDir.' && zip -r '.$destDir.$prefix.$date.'.zip *';
 		return shell_exec($cmd);
     }
 }

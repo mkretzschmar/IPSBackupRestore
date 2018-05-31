@@ -6,8 +6,8 @@
         },
         {
             "type": "ValidationTextBox",
-            "name": "Zielverzeichnis",
-            "caption": "DestinationDir"
+            "name": "DestinationDir",
+            "caption": "Zielverzeichnis"
         },
         {
             "type": "ValidationTextBox",
@@ -21,16 +21,14 @@
         }
     ],
     "actions": [{
-            "type": "Button",
-            "label": "Backup einrichten",
-            "onClick": "BAC_Prepare($id);"
-        },
-        {
-            "type": "Button",
-            "label": "Mount Stick",
-            "onClick": "echo 'Info: '.sprintf('%s', BAC_MountUSBStick($id)).'.';"
-        }
-    ],
+        "type": "Button",
+        "label": "Mount USB-Stick (FAT32)",
+        "onClick": "echo 'Info: '.sprintf('%s', BAC_MountUSBStick($id)).'.';"
+    }, {
+        "type": "Button",
+        "label": "Backup ausführen",
+        "onClick": "BAC_DoBackup($id);"
+    }],
     "status": [{
             "code": 101,
             "icon": "unknown",
