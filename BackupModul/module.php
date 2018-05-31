@@ -23,6 +23,7 @@ class BackupExtension extends IPSModule {
         $this->RegisterPropertyString("Prefix", "ipsbackup_");
         $this->RegisterPropertyInteger("Period", 1); // 1 day
         // Report Properties
+        $this->RegisterPropertyBoolean("ReportActivated", false);
         $this->RegisterPropertyInteger("SMTPSourceID", 0);
         $this->RegisterPropertyString("ReportReceiver", "marekre@fh-zwickau.de");
 
@@ -74,7 +75,15 @@ class BackupExtension extends IPSModule {
         echo "DoBackup: ".$srcDir." -> ".$destDir;
         $date = date("Ymd-Gi");
         $cmd = 'cd '.$srcDir.' && zip -r '.$destDir.$prefix.$date.'.zip *';
-		return shell_exec($cmd);
+        $ret = shell_exec($cmd);
+
+        // Send Email-Report, if activated
+        $ReportActivated = $this->ReadPropertyBoolean("ReportActivated");
+        if($ReportActivated) {
+            $this->DoReport();
+        }
+
+        return $ret;
     }
 
     /**

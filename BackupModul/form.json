@@ -27,6 +27,11 @@
             "label": "Backup-Report"
         },
         {
+            "type": "CheckBox",
+            "name": "ReportActivated",
+            "caption": "Report aktivieren"
+        },
+        {
             "type": "SelectVariable",
             "name": "SMTPSourceID",
             "caption": "SMTP-Instanz"
