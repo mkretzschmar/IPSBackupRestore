@@ -1,5 +1,8 @@
 {
     "elements": [{
+            "type": "Label",
+            "label": "Backup-Einstellungen"
+        }, {
             "type": "ValidationTextBox",
             "name": "SourceDir",
             "caption": "Quellverzeichnis"
@@ -13,6 +16,20 @@
             "type": "ValidationTextBox",
             "name": "Prefix",
             "caption": "Prefix"
+        },
+        {
+            "type": "IntervalBox",
+            "name": "Period",
+            "caption": "Days"
+        },
+        {
+            "type": "Label",
+            "label": "Backup-Report"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "SMTPSourceID",
+            "caption": "SMTP-Instanz"
         },
         {
             "type": "ValidationTextBox",
@@ -36,17 +53,17 @@
         }, {
             "code": 102,
             "icon": "active",
-            "caption": "Login information valid"
+            "caption": "Backup bereit"
         },
         {
             "code": 201,
             "icon": "error",
-            "caption": "Authentication failed"
+            "caption": "Backup failed (201 - wrong dest dir)"
         },
         {
             "code": 202,
             "icon": "error",
-            "caption": "No credits left"
+            "caption": "Backup failed (202 - no space left on dest)"
         }
     ]
 }
