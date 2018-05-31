@@ -1,48 +1,54 @@
 {
-    "elements": [
-        {
+    "elements": [{
             "type": "ValidationTextBox",
-            "name": "Username",
-            "caption": "Username"
+            "name": "SourceDir",
+            "caption": "Quellverzeichnis"
         },
         {
             "type": "ValidationTextBox",
-            "name": "Password",
-            "caption": "Password"
+            "name": "Zielverzeichnis",
+            "caption": "DestinationDir"
         },
         {
             "type": "ValidationTextBox",
-            "name": "Sender",
-            "caption": "Sender"
+            "name": "Prefix",
+            "caption": "Prefix"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "ReportReceiver",
+            "caption": "Report-Empfänger"
         }
     ],
-    "actions": [
-        {
-            "type": "ValidationTextBox",
-            "name": "Number",
-            "caption": "Number"
-        },
-        {
-            "type": "ValidationTextBox",
-            "name": "Message",
-            "caption": "Message"
-        },
-        {
+    "actions": [{
             "type": "Button",
-            "label": "Send Message",
-            "onClick": "SMS_Send($id);"
+            "label": "Backup einrichten",
+            "onClick": "BAC_Prepare($id);"
         },
         {
             "type": "Button",
             "label": "Mount Stick",
-            "onClick": "echo 'Info: '.sprintf('%.2f', BAC_MountUSBStick($id)).'.';"
+            "onClick": "echo 'Info: '.sprintf('%s', BAC_MountUSBStick($id)).'.';"
         }
     ],
-    "status": [
-        {
+    "status": [{
+            "code": 101,
+            "icon": "unknown",
+            "caption": "Unbekannter Status (101)"
+        }, {
             "code": 102,
-            "icon": "active", "caption": "Login information valid" },
-        { "code": 201, "icon": "error", "caption": "Authentication failed" },
-        { "code": 202, "icon": "error", "caption": "No credits left" }
+            "icon": "active",
+            "caption": "Login information valid"
+        },
+        {
+            "code": 201,
+            "icon": "error",
+            "caption": "Authentication failed"
+        },
+        {
+            "code": 202,
+            "icon": "error",
+            "caption": "No credits left"
+        }
     ]
 }
