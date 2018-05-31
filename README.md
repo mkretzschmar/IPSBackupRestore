@@ -1,7 +1,12 @@
-# IPSArchiveExtension
+# IPSBackupRestore
 
-Funktionen zur Bearbeitung/Verwaltung gespeicherter Daten (bspw. Filter)
+ACHTUNG! BETA-Version! Benutzung auf eigene Gefahr!
 
+Restore ist noch nicht implementiert!
+
+----
+Einfaches Modul zur Kapselung von Backup und Restore
+----
  GUID
 
  {C6A69AFF-A590-43AE-A248-0F77E8E59069}
