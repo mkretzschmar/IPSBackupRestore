@@ -1,13 +1,13 @@
 {
 "id": "{C6A69AFF-A590-43AE-A248-0F77E8E59069}",
 "author": "Marek Kretzschmar",
-"name": "Backup Module",
+"name": "IPS Backup & Restore",
 "url": "www.samsol.de",
 "compatibility": {
-    "version": "4.2",
+    "version": "4.3",
     "date": 1491343200
 },
-"version": "1.0",
+"version": "0.2",
 "build": 0,
 "date": 1505403173 
 }
