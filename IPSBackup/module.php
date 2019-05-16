@@ -83,7 +83,7 @@ class BackupExtension extends IPSModule {
             $this->DoReport();
         }
 
-	echo "\nDoBackup finished.\n";
+	echo "\nDoBackup finished. $ret\n";
         return $ret;
     }
 
@@ -98,8 +98,8 @@ class BackupExtension extends IPSModule {
         $ReportReceiver = $this->ReadPropertyString("ReportReceiver");
 
         $content = "Backup finished.\n\nFile: ".exec('ls -l '.$destDir);
-		$content .= "\n\n".exec('df -h '.$destDir);
-		return SMTP_SendMailEx($SMTPSourceID, $ReportReceiver, "[BACKUP IPS] Backup-Report", $content);
+	$content .= "\n\n".exec('df -h '.$destDir);
+	return SMTP_SendMailEx($SMTPSourceID, $ReportReceiver, "[BACKUP IPS] Backup-Report", $content);
     }
 }
 ?>
