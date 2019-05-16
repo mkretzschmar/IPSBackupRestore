@@ -72,7 +72,7 @@ class BackupExtension extends IPSModule {
         $destDir = $this->ReadPropertyString("DestinationDir");
         $prefix = $this->ReadPropertyString("Prefix");
 
-        echo "DoBackup: ".$srcDir." -> ".$destDir;
+        echo "DoBackup: ".$srcDir." -> ".$destDir."\n";
         $date = date("Ymd-Gi");
         $cmd = 'cd '.$srcDir.' && zip -r '.$destDir.$prefix.$date.'.zip *';
         $ret = shell_exec($cmd);
@@ -83,6 +83,7 @@ class BackupExtension extends IPSModule {
             $this->DoReport();
         }
 
+	echo "\nDoBackup finished.\n";
         return $ret;
     }
 
