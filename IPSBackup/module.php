@@ -18,7 +18,7 @@ class BackupExtension extends IPSModule {
     public function Create() {
         parent::Create();
         // Backup Properties
-        $this->RegisterPropertyString("SourceDir", "/var/lib/symcon/");
+        $this->RegisterPropertyString("SourceDir", IPS_GetKernelDir());
         $this->RegisterPropertyString("DestinationDir", "/media/usbstick/");
         $this->RegisterPropertyString("Prefix", "ipsbackup_");
         $this->RegisterPropertyInteger("Period", 1); // 1 day
