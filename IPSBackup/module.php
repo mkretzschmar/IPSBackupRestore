@@ -25,7 +25,7 @@ class BackupExtension extends IPSModule {
         // Report Properties
         $this->RegisterPropertyBoolean("ReportActivated", false);
         $this->RegisterPropertyInteger("SMTPSourceID", 0);
-        $this->RegisterPropertyString("ReportReceiver", "marekre@fh-zwickau.de");
+        $this->RegisterPropertyString("ReportReceiver", "symcon@samsol.de");
 
 
     }
